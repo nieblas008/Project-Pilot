@@ -6,7 +6,7 @@
 
 Project Pilot is an early-stage research project exploring how an AI system might generate music — full songs, lyrics, instrumentation, production choices — that feels authentically inspired by a specific artist. Not a generic "song in the style of X," but something that respects the artist's themes, sonic signatures, lyrical voice, and creative tendencies.
 
-The project is named after Twenty One Pilots, which serves as the canonical case study (see [`docs/case-studies/twenty-one-pilots.md`](docs/case-studies/twenty-one-pilots.md)), but the system is being designed to generalize: any artist with enough available material (catalog, interviews, public writing) should be modelable.
+The project is named after twenty one pilots, which serves as the canonical case study (see [`docs/case-studies/twenty-one-pilots.md`](docs/case-studies/twenty-one-pilots.md)), but the system is being designed to generalize: any artist with enough available material (catalog, interviews, public writing) should be modelables
 
 ## What this is *not*
 
@@ -16,7 +16,7 @@ The project is named after Twenty One Pilots, which serves as the canonical case
 
 ## Why this exists
 
-Good music takes time. Artists with cohesive identities — Twenty One Pilots, Radiohead, Phoebe Bridgers, Kendrick Lamar, etc. — release on the order of one album every few years. Fans wait. Project Pilot is an experiment in whether an AI system can produce additional material that feels truthful to an artist's identity in those gaps, in a way that respects what made the original work meaningful.
+Good music takes time. Artists with cohesive identities — twenty one pilots, Radiohead, Phoebe Bridgers, Kendrick Lamar, etc. — release on the order of one album every few years. Fans wait. Project Pilot is an experiment in whether an AI system can produce additional material that feels truthful to an artist's identity in those gaps, in a way that respects what made the original work meaningful.
 
 ## Current status: theory and research
 
@@ -56,6 +56,10 @@ All documentation lives in [`docs/`](docs/). Read in roughly this order:
 
 The roadmap is provisional. It will change as the research clarifies what's actually feasible.
 
-## How to contribute (to yourself, mostly)
+## How to contribute
 
-If you're reading this and it's you, future Ricardo: when you learn something new about music or AI music generation, write it into the relevant research doc. The documents are meant to grow. They are the source code for the eventual implementation.
+If you're reading this and find the project interesting, please reach out, all help will be greatly appreciated.
+
+The documents are meant to grow. They are the source code for the eventual implementation.
+
+[![Get in touch](https://img.shields.io/badge/Get%20in%20touch-hello@ricardonieblas.com-2450D6?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hello@ricardonieblas.com)

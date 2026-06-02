@@ -1,22 +1,22 @@
 # Research Roadmap
 
-This is the opinionated learning path for Project Pilot. It's organized so that each phase teaches you what you need to evaluate the next phase. The order matters: studying AI music generation before you understand what "good music" means is how you end up building something that benchmarks well and sounds soulless.
+This is the opinionated learning path for Project Pilot. It's organized so that each phase teaches what is needed to evaluate the next phase. The order matters: studying AI music generation before understanding what "good music" means is the surest way to build something that benchmarks well and sounds soulless.
 
 ## How to use this document
 
 - Each section lists **topics to learn**, **why they matter for Project Pilot**, and **recommended starting points**.
-- Don't try to master everything before writing code. The point is to develop enough fluency to make informed decisions and evaluate outputs.
-- As you learn things, drop notes into the relevant document under [`research/`](research/). Those documents are the long-term knowledge base; this file is the index and curriculum.
+- The goal isn't to master everything before writing code. The point is to develop enough fluency to make informed decisions and evaluate outputs.
+- New findings go into the relevant document under [`research/`](research/). Those documents are the long-term knowledge base; this file is the index and curriculum.
 
 ## Estimated time
 
-If you're treating this as a serious side project (~5–10 hours a week), expect the documentation/learning phase to take **3–6 months** before you have enough to start meaningful implementation. Most people grasp foundational music theory in 6–12 months of consistent practice; you don't need full mastery, just functional literacy. ([source](https://www.iconcollective.edu/basic-music-theory))
+Treated as a serious side project (~5–10 hours a week), the documentation/learning phase could take **3–6 months** before there's enough to start meaningful implementation. Most people grasp foundational music theory in 6–12 months of consistent practice; full mastery isn't required — just functional literacy. ([source](https://www.iconcollective.edu/basic-music-theory))
 
 ---
 
 ## Phase 1 — Music fundamentals (start here)
 
-You cannot evaluate AI-generated music if you don't know how music works. This is the foundation.
+AI-generated music can't be evaluated without an understanding of how music works. This is the foundation.
 
 ### 1.1 Music theory basics
 
@@ -30,7 +30,7 @@ You cannot evaluate AI-generated music if you don't know how music works. This i
 - Melody: contour, phrasing, motif, repetition vs. variation.
 - Harmony: voice leading, cadences, tension and resolution.
 
-**Why it matters:** Every decision the AI makes — what chord comes next, where a melody resolves, whether a rhythm feels "off" — happens inside the language of music theory. You need to be able to look at generated output and say "this is in the key of D minor and the chord progression is i–VI–III–VII, which is why it feels like a TØP verse."
+**Why it matters:** Every decision the AI makes — what chord comes next, where a melody resolves, whether a rhythm feels "off" — happens inside the language of music theory. Contributors need to be able to look at generated output and say "this is in the key of D minor and the chord progression is I–VI–III–VII."
 
 **Starting points:**
 - [`research/music-theory.md`](research/music-theory.md) — the project's growing notes.
@@ -48,12 +48,12 @@ You cannot evaluate AI-generated music if you don't know how music works. This i
 - How melody interacts with lyrics (syllabic vs. melismatic, prosody).
 - Subtext and how songs operate on multiple levels at once.
 
-**Why it matters:** This is what your system actually has to produce. Knowing what's *normal* lets the AI deliberately deviate when the artist deviates (TØP often blurs verse/chorus boundaries; that's part of their signature).
+**Why it matters:** This is what the system actually has to produce. Knowing what's *normal* lets the AI deliberately deviate when the artist deviates (TØP often blurs verse/chorus boundaries; that's part of their signature).
 
 **Starting points:**
 - [`research/songwriting-and-lyrics.md`](research/songwriting-and-lyrics.md).
 - MasterClass: [Songwriting 101: Common Song Structures](https://www.masterclass.com/articles/songwriting-101-learn-common-song-structures).
-- Read lyrics-with-analysis from artists you admire. Genius.com annotations are a starting point but go deeper — search "[artist] lyrical analysis" essays.
+- Read lyrics-with-analysis from notable artists. Genius.com annotations are a starting point but go deeper — search "[artist] lyrical analysis" essays.
 
 ### 1.3 Instruments, arrangement, and production
 
@@ -66,7 +66,7 @@ You cannot evaluate AI-generated music if you don't know how music works. This i
 - Mixing: levels, panning, EQ, compression, reverb, delay.
 - Mastering: loudness, stereo width, final polish.
 
-**Why it matters:** A great melody with bad arrangement is a bad song. The artist-fidelity problem is mostly a *production* problem — TØP and a session musician could play the same chords and you'd still know which is which from the production.
+**Why it matters:** A great melody with bad arrangement is a bad song. The artist-fidelity problem is mostly a *production* problem — TØP and a session musician could play the same chords and the production alone would still give it away.
 
 **Starting points:**
 - [`research/instruments-and-production.md`](research/instruments-and-production.md).
@@ -77,7 +77,7 @@ You cannot evaluate AI-generated music if you don't know how music works. This i
 
 ## Phase 2 — The AI music generation landscape
 
-Now that you have a frame of reference for what "good music" means, you can evaluate what existing systems do.
+With a frame of reference for what "good music" means in place, it becomes possible to evaluate what existing systems do.
 
 ### 2.1 Survey of generative music systems
 
@@ -90,7 +90,7 @@ Now that you have a frame of reference for what "good music" means, you can eval
 - **Riffusion** — clever hack using image diffusion on spectrograms.
 - **AIVA, Soundraw, Beatoven** — closed-source, focused on instrumental/background music.
 
-**Why it matters:** Don't reinvent. Understand which approaches are credible, which are dead ends, and what's open-source enough to actually build on.
+**Why it matters:** Don't reinvent. Understanding which approaches are credible, which are dead ends, and what's open-source enough to actually build on saves enormous effort.
 
 **Starting points:**
 - [`research/ai-music-generation.md`](research/ai-music-generation.md).
@@ -105,7 +105,7 @@ Now that you have a frame of reference for what "good music" means, you can eval
 - Latent / tokenized audio (EnCodec, SoundStream, then transformer on top).
 - Tradeoffs: symbolic is editable and structured but loses timbre and vocals; audio captures everything but is computationally expensive and hard to edit. ([overview](https://pupuweb.com/why-is-midi-better-than-wav-for-symbolic-music-generation/))
 
-**Why it matters:** Your Phase 2 implementation is probably symbolic. Your Phase 3 implementation is probably audio. Knowing the tradeoffs lets you plan.
+**Why it matters:** The Phase 2 implementation is probably symbolic; the Phase 3 implementation is probably audio. Understanding the tradeoffs makes it possible to plan.
 
 ### 2.3 Lyric generation
 
@@ -139,12 +139,12 @@ This is the original contribution of Project Pilot. There is real research in th
 - Audio fingerprinting (Shazam-style).
 - Modern embeddings: CLAP, MERT, MusicNN, CLaMP. ([Wikipedia overview](https://en.wikipedia.org/wiki/Music_information_retrieval))
 
-**Why it matters:** MIR gives you the computational vocabulary to describe what makes an artist sonically distinctive. The artist-modeling layer is essentially an MIR problem turned generative.
+**Why it matters:** MIR provides the computational vocabulary to describe what makes an artist sonically distinctive. The artist-modeling layer is essentially an MIR problem turned generative.
 
 **Starting points:**
 - [`research/artist-style-modeling.md`](research/artist-style-modeling.md).
 - The `librosa` Python library tutorials — get hands-on with feature extraction.
-- The ISMIR conference proceedings if you want depth.
+- The ISMIR conference proceedings for greater depth.
 
 ### 3.2 Style transfer and conditioning
 
@@ -160,7 +160,7 @@ This is the original contribution of Project Pilot. There is real research in th
 
 ## Phase 4 — Adjacent topics worth knowing
 
-These don't fit neatly in a phase but you'll need them eventually.
+These don't fit neatly in a phase but the project will need them eventually.
 
 ### 4.1 Legal and ethical
 
@@ -181,7 +181,7 @@ These don't fit neatly in a phase but you'll need them eventually.
 - Why standard ML metrics fail for creative output.
 - A/B blind tests with knowledgeable listeners.
 - Frechet Audio Distance and its limitations.
-- Building a "fan turing test" rubric for your specific artist.
+- Building a "fan turing test" rubric for the specific artist being modeled.
 
 ### 4.3 Practical ML
 
@@ -195,10 +195,10 @@ These don't fit neatly in a phase but you'll need them eventually.
 
 ## Suggested first three weeks
 
-If you want a concrete on-ramp:
+A concrete on-ramp for new contributors:
 
 1. **Week 1:** Skim music theory basics (Phase 1.1). Pick a free DAW and load some loops. Play with chord progressions.
-2. **Week 2:** Watch/read song-structure analyses of three TØP songs you know well. Try writing lyrics in their style by hand — no AI. Notice what's hard.
+2. **Week 2:** Watch/read song-structure analyses of three well-known TØP songs. Try writing lyrics in their style by hand — no AI. Notice what's hard.
 3. **Week 3:** Read the MusicGen paper. Run the open-source MusicGen model on HuggingFace with a few prompts. Notice what it does well and where it fails for artist-specific output.
 
-By the end of week 3 you'll have a much clearer sense of which direction Project Pilot should take.
+By the end of week 3, the right direction for Project Pilot should be much clearer.

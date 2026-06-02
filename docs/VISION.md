@@ -8,7 +8,7 @@ This is different from existing AI music tools in a specific way: most current s
 
 ## Why this matters (the personal version)
 
-Artists with cohesive identities release slowly. Twenty One Pilots — the band this project is named after — has put out roughly one album every 2–3 years over the course of their career. The wait is meaningful, because the work is meaningful. But it's still a wait.
+Artists with cohesive identities release slowly. twenty one pilots — the band this project is named after — has put out roughly one album every 2–3 years over the course of their career. The wait is meaningful, because the work is meaningful. But it's still a wait.
 
 Most AI-generated music in 2026 has the opposite problem: infinite supply, near-zero artistic specificity. A song that sounds vaguely like "indie pop" or "alt-rock" isn't satisfying in the way that a song that sounds like *that band* is. The promise of artist-specific generation is that, done well, it could give fans a way to spend more time inside an artist's universe — between releases, or after a band has stopped making music, or as a creative tool for someone to interrogate what they actually love about an artist's work.
 
@@ -18,7 +18,7 @@ These are the design commitments that should guide everything downstream.
 
 ### 1. Fidelity over flexibility
 
-The system is allowed to produce a narrow range of outputs as long as those outputs are deeply true to the chosen artist. It is *not* allowed to drift toward generic "good music." If the chosen artist wouldn't release something, the system shouldn't produce it.
+The system is allowed to produce a narrow range of outputs as long as those outputs are deeply true to the chosen artist. It is *not* allowed to drift toward generic "good music". If the chosen artist wouldn't release something, the system shouldn't produce it.
 
 This implies real tradeoffs. The system will be worse at "popular" output than Suno or Udio. That is the point.
 
@@ -44,7 +44,7 @@ This is a high bar. It's part of why this project requires real understanding of
 
 ### 4. Generalizable, not just one band
 
-Twenty One Pilots is the test case because it's what I know best and have the most data on. But the system architecture should let any artist with sufficient material (catalog, interviews, public writing) be modeled. The artist-modeling layer should be data-driven enough that adding a new artist doesn't require re-architecting the system.
+twenty one pilots is the test case because it's what I know best and have the most data on. But the system architecture should let any artist with sufficient material (catalog, interviews, public writing) be modeled. The artist-modeling layer should be data-driven enough that adding a new artist doesn't require re-architecting the system.
 
 ### 5. Theory before code
 
@@ -67,9 +67,9 @@ The minimum bar for success is qualitative, and probably evaluable only by peopl
 
 These are aspirational. The first version of the system will fail all of them. The point is that we know what we're aiming at.
 
-## What this project will probably teach me
+## What this project will probably teach
 
-Even if Project Pilot never produces a single passable song, the process should leave me with:
+Even if Project Pilot never produces a single passable song, the process should leave us with:
 
 - Real fluency in music theory and songwriting.
 - A working knowledge of the AI music generation field.
