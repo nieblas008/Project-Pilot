@@ -1,0 +1,7 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+
+# Generated retrieval indexes are derived data (rebuild with `project_pilot.cli index`).
+data/artists/*/index/

@@ -1,0 +1,28 @@
+{
+  "id": "_sample-001",
+  "title": "[SAMPLE — placeholder, not a real song]",
+  "album": "Sample Data",
+  "era": "sample",
+  "themes": ["identity", "doubt"],
+  "sections": [
+    {
+      "label": "verse",
+      "lines": [
+        "This is placeholder text for testing the retrieval pipeline.",
+        "It is not a real lyric from any artist.",
+        "Swap this file out for legally obtained material before drawing any conclusions."
+      ]
+    },
+    {
+      "label": "chorus",
+      "lines": [
+        "Sample chorus line for structural testing.",
+        "Sample chorus line, repeated for chorus behavior.",
+        "Sample chorus line for structural testing.",
+        "Sample chorus line, repeated for chorus behavior."
+      ]
+    }
+  ],
+  "source": "synthetic placeholder written for this scaffold",
+  "notes": "Exists only so `index` and `generate` have something to retrieve against. Delete once real corpus data is added."
+}

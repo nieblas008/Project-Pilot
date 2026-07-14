@@ -18,15 +18,15 @@ The project is named after twenty one pilots, which serves as the canonical case
 
 Good music takes time. Artists with cohesive identities — twenty one pilots, Radiohead, Phoebe Bridgers, Kendrick Lamar, etc. — release on the order of one album every few years. Fans wait. Project Pilot is an experiment in whether an AI system can produce additional material that feels truthful to an artist's identity in those gaps, in a way that respects what made the original work meaningful.
 
-## Current status: theory and research
+## Current status: theory and research, Phase 1 scaffold started
 
-The project is currently in a **documentation-and-learning phase**. No code has been written. The intent is to build deep theoretical grounding in:
+The project spent its first stretch in a **documentation-and-learning phase**, building theoretical grounding in:
 
 1. **Music** — theory, composition, production, instrumentation, songwriting.
 2. **AI music generation** — what's been tried, what works, what doesn't.
 3. **Artist style modeling** — how to capture and reproduce an artist's identity computationally.
 
-Implementation will start once the theory is solid enough to make informed decisions about architecture, training data, and evaluation.
+A first-pass implementation of **Phase 1 (lyrics)** now exists in [`project_pilot/`](project_pilot/): a retrieval-augmented lyric generator following the pipeline in [`docs/research/ai-lyric-generation.md`](docs/research/ai-lyric-generation.md) — structured artist profile + embedded catalog retrieval + prompt construction + LLM generation + naive filters. See that directory and [`data/artists/top/`](data/artists/top/) to get started; the seeded corpus is placeholder data only (see [`data/artists/top/corpus/README.md`](data/artists/top/corpus/README.md)) pending real, legally-sourced lyrics per [`docs/research/legal-and-ethics.md`](docs/research/legal-and-ethics.md). The research documentation continues to grow alongside it — theory and implementation are proceeding together now rather than strictly sequentially.
 
 ## Documentation map
 
@@ -48,8 +48,8 @@ All documentation lives in [`docs/`](docs/). Read in roughly this order:
 
 ## Roadmap
 
-- **Phase 0 — Documentation & learning (current).** Fill out the research docs. Build personal understanding of music theory, songwriting, and the AI music landscape. No code.
-- **Phase 1 — Lyrics first.** Build a system that generates lyrics in the voice of a chosen artist. This is the cheaper, more tractable starting point and validates the artist-modeling approach.
+- **Phase 0 — Documentation & learning.** Fill out the research docs. Build personal understanding of music theory, songwriting, and the AI music landscape. Ongoing, in parallel with Phase 1 now.
+- **Phase 1 — Lyrics first (in progress).** Build a system that generates lyrics in the voice of a chosen artist. This is the cheaper, more tractable starting point and validates the artist-modeling approach. Initial scaffold: [`project_pilot/`](project_pilot/).
 - **Phase 2 — Symbolic music (MIDI).** Generate chord progressions and melodies in an artist's style using symbolic representations. Cheaper than audio, easier to evaluate, gives compositional control.
 - **Phase 3 — Audio generation.** Either integrate with an existing model (MusicGen, Stable Audio) or build a thinner layer on top. Likely artist-conditioning via fine-tuning or retrieval.
 - **Phase 4 — End-to-end system.** Lyrics + melody + arrangement + production, with the artist-modeling layer steering all of it.

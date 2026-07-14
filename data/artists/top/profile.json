@@ -1,0 +1,97 @@
+{
+  "name": "Twenty One Pilots",
+  "slug": "top",
+  "sole_writer": true,
+  "eras": [
+    {
+      "name": "early",
+      "albums": ["Twenty One Pilots", "Regional at Best"],
+      "years": "2009-2011",
+      "notes": "Looser, more eclectic, piano-driven. Lyrically raw."
+    },
+    {
+      "name": "breakthrough",
+      "albums": ["Vessel", "Blurryface"],
+      "years": "2013-2015",
+      "notes": "More polished production, bigger choruses. 'Blurryface' character introduced."
+    },
+    {
+      "name": "lore",
+      "albums": ["Trench"],
+      "years": "2018",
+      "notes": "Dense, dark, fully committed to mythology. Yellow imagery dominant."
+    },
+    {
+      "name": "pandemic-pivot",
+      "albums": ["Scaled and Icy"],
+      "years": "2021",
+      "notes": "Brighter, more pop-leaning surface; the mythology is hidden underneath."
+    },
+    {
+      "name": "return-to-source",
+      "albums": ["Clancy"],
+      "years": "2024",
+      "notes": "Closes the mythological arc; blends Trench-era darkness with Scaled and Icy brightness."
+    }
+  ],
+  "themes": [
+    "mental health (anxiety, depression, dissociation, suicidal ideation)",
+    "faith and doubt",
+    "identity (who am I vs. who I present as)",
+    "fear of failure / fear of obscurity",
+    "hope despite evidence",
+    "the relationship between artist and listener",
+    "loneliness and connection",
+    "memory and the past"
+  ],
+  "anti_themes": [
+    "romance as a primary subject",
+    "money, status, materialism",
+    "partying / hedonism",
+    "direct political commentary"
+  ],
+  "symbols": [
+    {"symbol": "yellow", "meaning": "bandit identity, hope; especially Trench/Clancy era"},
+    {"symbol": "bandits", "meaning": "the rebel faction in the Dema mythology"},
+    {"symbol": "hands and gloves", "meaning": "recurring physical motif"},
+    {"symbol": "cities and walls", "meaning": "built environments, often Dema"},
+    {"symbol": "sleep, waking, dreams", "meaning": "frequent metaphorical use"},
+    {"symbol": "heights and falling", "meaning": "common imagery"},
+    {"symbol": "voices in the head / two minds", "meaning": "tied to the mythology and to mental health themes"}
+  ],
+  "instrumentation_present": [
+    "piano (Rhodes-style electric or upright acoustic)",
+    "ukulele",
+    "bass synth (often the melodic lead low end)",
+    "tom-heavy drums with a distinctive snare crack",
+    "electronic textures / programmed beats",
+    "self-harmonized backing vocals"
+  ],
+  "instrumentation_absent": [
+    "electric guitar (notably sparse across much of the catalog; deliberate when it appears)"
+  ],
+  "vocal_styles": [
+    "clean tenor with strong falsetto",
+    "rapid melodic rap delivery",
+    "screamed/distorted vocals in heavy moments",
+    "spoken word sections",
+    "whisper / intimate close-mic delivery"
+  ],
+  "rhetorical_habits": [
+    "conditional and questioning constructions ('if I... would I...')",
+    "direct address to an unspecified 'you'",
+    "self-referential meta-lines about the writing/performing itself",
+    "repetition with variation",
+    "wordplay that resolves two ways"
+  ],
+  "structural_tendencies": [
+    "blurred verse/chorus boundaries",
+    "multiple hooks rather than one repeated chorus",
+    "genre switches at structural boundaries",
+    "anthemic group-chant outros",
+    "occasional through-composed songs",
+    "occasional time-signature and tempo changes within a song"
+  ],
+  "mythology_notes": "The Dema/Clancy mythology spans Blurryface, Trench, Scaled and Icy, and Clancy: characters (Clancy, Nico, the Bishops, the bandits), places (Dema, Trench), and an ongoing narrative. Many songs work both as standalone emotional pieces and as plot points in this larger story. Generated lyrics that gesture at this mythology should not contradict established canon.",
+  "data_sources_note": "See docs/case-studies/twenty-one-pilots.md for the full case study and docs/research/legal-and-ethics.md before adding real corpus material to data/artists/top/corpus/."
+}

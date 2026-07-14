@@ -1,0 +1,26 @@
+{
+  "id": "_sample-002",
+  "title": "[SAMPLE — placeholder, not a real song]",
+  "album": "Sample Data",
+  "era": "sample",
+  "themes": ["faith", "doubt", "hope"],
+  "sections": [
+    {
+      "label": "verse",
+      "lines": [
+        "Another placeholder verse, this time about faith and doubt.",
+        "Used only to give the retriever two distinct themes to distinguish between.",
+        "Still not a real lyric from any artist."
+      ]
+    },
+    {
+      "label": "bridge",
+      "lines": [
+        "Placeholder bridge line testing a structural shift.",
+        "Placeholder bridge line, second half of the turn."
+      ]
+    }
+  ],
+  "source": "synthetic placeholder written for this scaffold",
+  "notes": "Exists only so retrieval has more than one candidate to rank. Delete once real corpus data is added."
+}
