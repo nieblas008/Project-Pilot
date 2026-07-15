@@ -20,13 +20,36 @@ from .retrieval import load_index_for_artist
 DEFAULT_MODEL = os.environ.get("PROJECT_PILOT_MODEL", "claude-sonnet-5")
 
 
+class GenerationParseError(Exception):
+    """Raised when the model's response couldn't be parsed as the expected JSON shape."""
+
+
 def _extract_json(text: str) -> dict[str, Any]:
-    """The model is asked for raw JSON; be lenient in case it wraps it in fences anyway."""
-    text = text.strip()
-    fenced = re.search(r"```(?:json)?\s*(\{.*\})\s*```", text, re.DOTALL)
+    """The model is asked for raw JSON; be lenient about how it might wrap it anyway.
+
+    Tries, in order: the whole response as-is, a fenced ```json ... ``` block, and
+    finally the outermost {...} substring (in case the model added stray prose before
+    or after the object despite instructions not to).
+    """
+    stripped = text.strip()
+    candidates = [stripped]
+
+    fenced = re.search(r"```(?:json)?\s*(\{.*\})\s*```", stripped, re.DOTALL)
     if fenced:
-        text = fenced.group(1)
-    return json.loads(text)
+        candidates.append(fenced.group(1))
+
+    first_brace, last_brace = stripped.find("{"), stripped.rfind("}")
+    if first_brace != -1 and last_brace > first_brace:
+        candidates.append(stripped[first_brace : last_brace + 1])
+
+    for candidate in candidates:
+        try:
+            return json.loads(candidate)
+        except json.JSONDecodeError:
+            continue
+    raise GenerationParseError(
+        f"Could not parse a JSON object out of the model's response:\n{text}"
+    )
 
 
 def generate_lyrics(

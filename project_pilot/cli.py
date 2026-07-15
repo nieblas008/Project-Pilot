@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
@@ -17,31 +18,45 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 def cmd_index(args: argparse.Namespace) -> None:
     from .retrieval import build_index_for_artist
 
-    index = build_index_for_artist(DATA_DIR, args.artist)
+    try:
+        index = build_index_for_artist(DATA_DIR, args.artist)
+    except (FileNotFoundError, ValueError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        sys.exit(1)
     index_dir = DATA_DIR / "artists" / args.artist / "index"
     print(f"Indexed {len(index.songs)} song(s) for '{args.artist}' -> {index_dir}")
 
 
 def cmd_generate(args: argparse.Namespace) -> None:
-    from .generate import generate_lyrics
+    from .generate import GenerationParseError, generate_lyrics
+    from .storage import save_generation
 
     structure = [s.strip() for s in args.structure.split(",") if s.strip()]
-    result = generate_lyrics(
-        data_dir=DATA_DIR,
-        artist_slug=args.artist,
-        theme=args.theme,
-        mood=args.mood,
-        structure=structure,
-        era=args.era,
-        top_k=args.top_k,
-        model=args.model or "claude-sonnet-5",
-    )
+    try:
+        result = generate_lyrics(
+            data_dir=DATA_DIR,
+            artist_slug=args.artist,
+            theme=args.theme,
+            mood=args.mood,
+            structure=structure,
+            era=args.era,
+            top_k=args.top_k,
+            model=args.model or "claude-sonnet-5",
+        )
+    except (FileNotFoundError, GenerationParseError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        sys.exit(1)
+
     output = json.dumps(result, indent=2)
     if args.out:
         Path(args.out).write_text(output)
         print(f"Wrote {args.out}")
     else:
         print(output)
+
+    if not args.no_archive:
+        archive_path = save_generation(DATA_DIR, args.artist, result)
+        print(f"Archived -> {archive_path}", file=sys.stderr)
 
 
 def main() -> None:
@@ -69,6 +84,11 @@ def main() -> None:
     p_generate.add_argument("--top-k", type=int, default=5)
     p_generate.add_argument("--model", default=None)
     p_generate.add_argument("--out", default=None, help="Write JSON output to this file")
+    p_generate.add_argument(
+        "--no-archive",
+        action="store_true",
+        help="Don't archive this generation under data/artists/<artist>/generations/",
+    )
     p_generate.set_defaults(func=cmd_generate)
 
     args = parser.parse_args()

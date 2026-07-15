@@ -5,3 +5,8 @@ __pycache__/
 
 # Generated retrieval indexes are derived data (rebuild with `project_pilot.cli index`).
 data/artists/*/index/
+
+# Archived generations stay local/personal — see docs/research/legal-and-ethics.md
+# ("no public releases of generated material that imitates a real artist"). This repo
+# is public, so these never get committed.
+data/artists/*/generations/
